@@ -1,0 +1,121 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url("/static/Diet_img2.jpg") no-repeat center/cover;
+
+  /* background: url("/static/Diet_img2.jpg") no-repeat center/cover; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Main container */
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Card container */
+.content {
+  background-color: #e0f2d8;
+  border-radius: 20px;
+  padding: 3rem 4rem;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2f4f4f;
+}
+
+.header span {
+  color: #067e3a;
+}
+
+/* Form */
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #32cd32;
+  box-shadow: 0 0 5px rgba(50, 205, 50, 0.3);
+}
+
+/* Submit Button */
+.form-group button {
+  background: linear-gradient(to right, #32cd32, #2e8b57);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  width: 50%;
+  align-self: center;
+  margin-top: 1.5rem;
+}
+
+.form-group button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #2e8b57, #228b22);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    padding: 2rem;
+  }
+  .form-group button {
+    width: 100%;
+  }
+}

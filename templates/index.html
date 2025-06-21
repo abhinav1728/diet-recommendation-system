@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Diet Recommender</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="main">
+    <div class="content">
+      <div class="header">
+        <h1>AI <span>Diet</span> Recommender</h1>
+      </div>
+      <form method="POST" class="form-content">
+        <div class="form-group"><label>Weight (kg)</label><input type="number" name="weight" required></div>
+        <div class="form-group"><label>Height (cm)</label><input type="number" name="height" required></div>
+        <div class="form-group"><label>Age</label><input type="number" name="age" required></div>
+        <div class="form-group">
+          <label>Gender</label>
+          <select name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Goal</label>
+          <select name="goal" required>
+            <option>Muscle Gain</option>
+            <option>Weight Loss</option>
+            <option>Maintenance</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Diet Type</label>
+          <select name="diet" required>
+            <option>Veg</option>
+            <option>Veg + Egg</option>
+            <option>Non-Veg</option>
+            <option>All</option>
+          </select>
+        </div>
+        <div class="form-group"><button type="submit">Get My Diet Plan</button></div>
+      </form>
+
+      {% if bmi %}
+      <div class="header" style="margin-top:2rem;">
+        <h3>Your BMI: {{ bmi }}</h3>
+        <h4>Daily Calorie Limit: {{ calorie_limit }} kcal</h4>
+        <h4>Total Calories Recommended: {{ total_cal }} kcal</h4>
+        <ul>
+          {% for food in recommendations %}
+            <li>✅ <strong>{{ food.food_name }}</strong> — {{ food.unit_serving_energy_kcal }} kcal, {{ food.unit_serving_protein_g }}g protein</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
